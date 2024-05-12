@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Mensaje N Veces</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <style>
+        .main {
+            text-align: center;
+        }
+    </style>
+    <div class="container mt-5">
+        <h2>Actividad Práctica Adicional - JavaScript Unidad 2</h2>
+        <h3>Tema: Funciones</h3>
+        <p>1. Realizar una función, a la que se le pase como parámetro un número N,
+            y muestre por consola N veces, el siguiente mensaje: “Bienvenidos al
+            curso Full Stack”</p>
+        <button class="btn btn-primary" onclick="mostrarMensajeBienvenida(3)">Mostrar Mensaje</button>
+        <p>2. Diseñar una función que tenga como parámetros dos números, y que
+            calcule el máximo.
+        </p>
+        <button class="btn btn-primary" onclick="calcularMaximo(5, 8)">Calcular Máximo</button>
+        <p>3. Crear una función que se llame promedio3, que reciba como
+            parámetro tres valores y devuelva el promedio de los mismos.
+        </p>
+        <button class="btn btn-primary" onclick="calcularPromedio(5, 8, 10)">Calcular Promedio</button>
+        <p>4. Crear una función que lea notas hasta que ingrese -1 y devuelve el
+            promedio de las notas leídas. ( aunque no se suele leer valores en una
+            función)Una función que se llame siguiente, que reciba como
+            parámetro un valor entero, y devuelva el siguiente del número
+            ingresado como parámetro
+        </p>
+        <button class="btn btn-primary" onclick="calcularPromedioNotas()">Calcular Promedio de Notas</button>
+        <button class="btn btn-primary" onclick="mostrarSiguienteNumero(5)">Mostrar Siguiente Número</button>
+        <p>5. Una función que se llame doble, que reciba como parámetro un valor, y
+            devuelva el doble del número ingresado como parámetro.
+        </p>
+        <button class="btn btn-primary" onclick="mostrarDoble(5)">Mostrar Doble</button>
+        <p>6. Una función que se llame cuadrado, que reciba como parámetro un
+            valor, y devuelva el valor del numero ingresado como parámetro
+            elevado al cuadrado.
+        </p>
+        <button class="btn btn-primary" onclick="mostrarCuadrado(5)">Mostrar Cuadrado</button>
+        <p>7. Una función que se denomine imprimirValores que dado un número
+            por parámetro, imprima cual es el valor siguiente, el doble y el
+            cuadrado. Usando las funciones definidas en los puntos 5) , 6) y 7) :
+            siguiente, el doble y el cuadrado.
+        </p>
+        <button class="btn btn-primary" onclick="mostrarValores(5)">Mostrar Valores</button>
+        <p>8. Una función que se denomine imprimirElDobleDelSiguiente que dado
+            un número por parámetro, imprima cual es el valor siguiente al el doble.
+            Usando las funciones definidas en los puntos 5) , 6) : siguiente, el
+            doble .
+        </p>
+        <button class="btn btn-primary" onclick="imprimirDobleSiguiente(5)">Imprimir Doble del Siguiente</button>
+        <p>9. Una función que se denomine
+            imprimirElDobleDelSiguienteAlCuadrado que dado un número por
+            parámetro, imprima cual es el valor siguiente al el doble. Usando las
+            funciones definidas en los puntos 5) , 6) y 7) : siguiente, el doble y el
+            cuadrado
+        </p>
+        <button class="btn btn-primary" onclick="imprimirDobleSiguienteAlCuadrado(5)">Imprimir Doble del Siguiente al
+            Cuadrado</button>
+        <p>10.Una función que dado la longitud de un lado de un cuadrado devuelva
+            el perímetro</p>
+        <button class="btn btn-primary" onclick="calcularPerimetroCuadrado(5)">Calcular Perímetro</button>
+        <p>11. Una función que dado la longitud de un lado de un cuadrado devuelva
+            la superficie.
+        </p>
+        <button class="btn btn-primary" onclick="calcularSuperficieCuadrado(5)">Calcular Superficie</button>
+        <p>12.Una función que dado el radio de un círculo devuelva la circunferencia
+            (perímetro del círculo).
+        </p>
+        <button class="btn btn-primary" onclick="calcularCircunferenciaCirculo(5)">Calcular Circunferencia</button>
+        <p>13.Una función que dado el radio de un círculo devuelva el área del
+            círculo.
+        </p>
+        <button class="btn btn-primary" onclick="calcularAreaCirculo(5)">Calcular Área</button>
+        <p>14.Una función que dado un número de mes y me devuelva la cantidad de
+            días de ese mes (suponiendo que no es un año bisiesto).
+        </p>
+        <button class="btn btn-primary" onclick="calcularDiasMes(2)">Calcular Días</button>
+        <p>15.Una función que reciba como parámetro un año y diga si ese año es
+            bisiesto.
+        </p>
+        <button class="btn btn-primary" onclick="determinarBisiesto(2024)">Determinar Año Bisiesto</button>
+        <p>16.Una función que reciba el día, mes y año y me devuelva la cantidad de
+            días de ese mes.
+        </p>
+        <div class="container mt-5">
+            <h2>Cantidad de Días de un Mes</h2>
+            <div>
+                <label for="inputDay">Día:</label>
+                <input type="number" id="inputDay">
+            </div>
+            <div>
+                <label for="inputMonth">Mes:</label>
+                <input type="number" id="inputMonth">
+            </div>
+            <div>
+                <label for="inputYear">Año:</label>
+                <input type="number" id="inputYear">
+            </div>
+            <button class="btn btn-primary mt-2" onclick="calcularDiasMes()">Calcular Días</button>
+        </div>
+        <p>17.Una función que reciba día, mes y año y devuelva el día anterior
+        </p>
+        <button class="btn btn-primary" onclick="calcularDiaAnterior(1, 1, 2023)">Calcular Día Anterior</button>
+        <p>17.Una función que reciba día, mes y año y devuelva el día anterior
+        </p>
+        <div class="container mt-5">
+            <h2>Día Anterior</h2>
+            <div>
+                <label for="inputDate">Ingrese la fecha (dd/mm/yyyy):</label>
+                <input type="text" id="inputDate" placeholder="dd/mm/yyyy">
+            </div>
+            <button class="btn btn-primary mt-2" onclick="calcularDiaAnterior()">Calcular Día Anterior</button>
+        </div>
+        <p>18.Una función que se llame ultimoDiaDelMes que reciba día, mes y año y
+            devuelva el último día del mes.
+        </p>
+        <div>
+            <label for="inputDay">Día:</label>
+            <input type="number" id="inputDay">
+        </div>
+        <div>
+            <label for="inputMonth">Mes:</label>
+            <input type="number" id="inputMonth">
+        </div>
+        <div>
+            <label for="inputYear">Año:</label>
+            <input type="number" id="inputYear">
+        </div>
+        <button class="btn btn-primary mt-2" onclick="calcularUltimoDiaDelMes()">Calcular Último Día</button>
+
+        <p>19.Ejercicio 1: cree un array con todas las edades de los estudiantes de su
+            clase. Itere el array utilizando un bucle while y luego imprima todas las
+            edades en la consola.
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio1()">Iterar y mostrar todas las edades</button>
+        <p>20.Ejercicio 2: Al ejercicio 1 agregue un condicional dentro del ciclo while
+            para imprimir solo números pares. Cambie el ciclo para usar un ciclo
+            "for" en lugar de un ciclo "while".
+            Para los siguientes ejercicios, no puede ordenar su array. ¡Asegúrese
+            de que su solución funcione para cualquier array que se pase!
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio2()">Mostrar solo números pares</button>
+        <p>21.Ejercicio 3: escriba una función que reciba un array como parámetro e
+            imprima el número más bajo de la array en la consola.
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio3()">Número más bajo</button>
+        <p>22.Ejercicio 4: escriba una función que reciba un array como parámetro e
+            imprima el número más grande de la array en la consola.
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio4()">Número más grande</button>
+        <p>23.Ejercicio 5: Escriba una función que reciba dos parámetros, una array y
+            un índice. La función imprimirá el valor del elemento en la posición
+            dada (basado en uno) en la consola. Por ejemplo, dada la siguiente
+            array e índice, la función imprimirá '6'.
+            var array =
+            [3,6,67,6,23,11,100,8,93,0,17,24,7,1,33,45,28,33,23,12,99,100];
+            var index = 1;
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio5()">Valor en posición dada</button>
+        <p>24.Ejercicio 6: Escriba una función que reciba una array y solo imprima los
+            valores que se repiten. Por ejemplo, dada la siguiente array e índice, la
+            función imprimirá '6,23,33,100'.
+            var array =
+            [3,6,67,6,23,11,100,8,93,0,17,24,7,1,33,45,28,33,23,12,99,100];
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio6()">Valores repetidos</button>
+        <p>25.Ejercicio 7: escriba una función de JavaScript simple para unir todos los
+            elementos de la siguiente array en una cadena.
+            myColor = ["Red", "Green", "White", "Black"];
+            Debería ver lo siguiente en su consola: "Rojo", "Verde", "Blanco",
+            "Negro"
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio7()">Unir elementos de una array</button>
+        <p>26.Ejercicio 8: escriba una función de JavaScript que invierta un número.
+            Por ejemplo, si x = 32443, la salida debería ser 34423.
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio8()">Invertir un número</button>
+        <p>27.Ejercicio 9: escriba una función de JavaScript que devuelva una cadena
+            en orden alfabético. Por ejemplo, si x = 'webmaster', la salida debería
+            ser 'abeemrstw'. La puntuación y los números no se pasan en la
+            cadena.
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio9()">Orden alfabético</button>
+        <p>28.Ejercicio 10: escriba una función de JavaScript que convierta la primera
+            letra de cada palabra a mayúsculas. Por ejemplo, si x = "prince of
+            persia", la salida debería ser "Prince Of Persia".
+        </p>
+        <button class="btn btn-primary" onclick="ejercicio10()">Mayúsculas en primera letra de cada palabra</button>
+        <p>29.Ejercicio 11: escriba una función de JavaScript que busque la palabra
+            más larga de una frase. Por ejemplo, si x = "Tutorial de desarrollo web",
+            el resultado debería ser "Desarrollo".</p>
+        <button class="btn btn-primary" onclick="ejercicio11()">Palabra más larga</button>
+
+    </div>
+    </div>
+
+
+    <script>
+        //ejercico 1 
+        function mostrarMensajeBienvenida(N) {
+            for (let i = 0; i < N; i++) {
+                console.log("Bienvenidos al curso Full Stack");
+            }
+            alert("Bienvenidos al curso Full Stack (repetido " + N + " veces)");
+        }
+        //ejercicio 2
+        function calcularMaximo(num1, num2) {
+            const maximo = Math.max(num1, num2);
+            alert("El máximo entre " + num1 + " y " + num2 + " es: " + maximo);
+        }
+        function calcularPromedio(num1, num2, num3) {
+
+            const promedio = (num1 + num2 + num3) / 3;
+
+
+            alert("El promedio de los números " + num1 + ", " + num2 + " y " + num3 + " es: " + promedio);
+        }
+        //ejercicio 3
+        function calcularPromedioNotas() {
+            let total = 0;
+            let contador = 0;
+            let nota;
+            do {
+                nota = parseFloat(prompt("Ingrese una nota (-1 para terminar):"));
+                if (nota !== -1) {
+                    total += nota;
+                    contador++;
+                }
+            } while (nota !== -1);
+
+            if (contador === 0) {
+                alert("No se ingresaron notas.");
+            } else {
+                const promedio = total / contador;
+                alert("El promedio de las notas ingresadas es: " + promedio.toFixed(2));
+            }
+        }
+        //ejercicio 4
+
+        function mostrarSiguienteNumero(numero) {
+            const siguiente = numero + 1;
+            alert("El siguiente número después de " + numero + " es: " + siguiente);
+        }
+        //ejercico 5
+        function doble(numero) {
+            return numero * 2;
+        }
+
+        function mostrarDoble(numero) {
+            const resultado = doble(numero);
+            alert("El doble de " + numero + " es: " + resultado);
+        }
+        //ejericio 6
+        function cuadrado(numero) {
+            return numero * numero;
+        }
+
+        function mostrarCuadrado(numero) {
+            const resultado = cuadrado(numero);
+            alert("El cuadrado de " + numero + " es: " + resultado);
+        }
+        //ejercicio 7
+        function doble(numero) {
+            return numero * 2;
+        }
+
+        function cuadrado(numero) {
+            return numero * numero;
+        }
+
+        function imprimirValores(numero) {
+            const siguiente = doble(numero);
+            const elDoble = cuadrado(numero);
+            const elCuadrado = cuadrado(numero);
+            alert("El valor siguiente de " + numero + " es: " + siguiente + "\n" +
+                "El doble de " + numero + " es: " + elDoble + "\n" +
+                "El cuadrado de " + numero + " es: " + elCuadrado);
+        }
+
+        function mostrarValores(numero) {
+            imprimirValores(numero);
+        }
+        function doble(numero) {
+            return numero * 2;
+        }
+        //ejercicio 8
+        function siguiente(numero) {
+            return numero + 1;
+        }
+
+        function imprimirElDobleDelSiguiente(numero) {
+            const elDoble = doble(numero);
+            const valorSiguienteAlDoble = siguiente(elDoble);
+            alert("El valor siguiente al doble de " + numero + " es: " + valorSiguienteAlDoble);
+        }
+
+        function imprimirDobleSiguiente(numero) {
+            imprimirElDobleDelSiguiente(numero);
+        }
+        //ejercicio 9
+        function doble(numero) {
+            return numero * 2;
+        }
+
+        function siguiente(numero) {
+            return numero + 1;
+        }
+
+        function cuadrado(numero) {
+            return numero * numero;
+        }
+
+        function imprimirElDobleDelSiguienteAlCuadrado(numero) {
+            const elDoble = doble(numero);
+            const valorSiguienteAlDoble = siguiente(elDoble);
+            const elCuadrado = cuadrado(elDoble);
+            alert("El valor siguiente al doble de " + numero + " al cuadrado es: " + elCuadrado);
+        }
+
+        function imprimirDobleSiguienteAlCuadrado(numero) {
+            imprimirElDobleDelSiguienteAlCuadrado(numero);
+        }
+        //ejercico 10
+        function calcularPerimetroCuadrado(longitudLado) {
+            const perimetro = 4 * longitudLado;
+            alert("El perímetro del cuadrado con lado de longitud " + longitudLado + " es: " + perimetro);
+        }
+        //ejercicio 11
+        function calcularSuperficieCuadrado(longitudLado) {
+            const superficie = longitudLado * longitudLado;
+            alert("La superficie del cuadrado con lado de longitud " + longitudLado + " es: " + superficie);
+        }
+        //ejercicio 12
+        function calcularCircunferenciaCirculo(radio) {
+            const circunferencia = 2 * Math.PI * radio;
+            alert("La circunferencia del círculo con radio " + radio + " es: " + circunferencia.toFixed(2));
+        }
+        //ejercicio 13
+        function calcularAreaCirculo(radio) {
+            const area = Math.PI * radio * radio;
+            alert("El área del círculo con radio " + radio + " es: " + area.toFixed(2));
+        }
+        //ejercicio 14
+        function calcularDiasMes(mes) {
+            const diasPorMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            const cantidadDias = diasPorMes[mes - 1];
+            alert("El mes " + mes + " tiene " + cantidadDias + " días.");
+        }
+        //ejercicio 15
+        function determinarBisiesto(anio) {
+            if ((anio % 4 === 0 && anio % 100 !== 0) || (anio % 400 === 0)) {
+                alert("El año " + anio + " es bisiesto.");
+            } else {
+                alert("El año " + anio + " no es bisiesto.");
+            }
+        }
+        //ejercicio 16
+        function calcularDiasMes() {
+            const dia = parseInt(document.getElementById("inputDay").value);
+            const mes = parseInt(document.getElementById("inputMonth").value);
+            const anio = parseInt(document.getElementById("inputYear").value);
+
+            const diasPorMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            const cantidadDias = diasPorMes[mes - 1];
+
+            if (dia >= 1 && dia <= cantidadDias && mes >= 1 && mes <= 12) {
+                alert("El mes " + mes + " del año " + anio + " tiene " + cantidadDias + " días.");
+            } else {
+                alert("Por favor, ingrese una fecha válida.");
+            }
+        }
+        //ejercicio 17
+        function calcularDiaAnterior() {
+            const fechaInput = document.getElementById("inputDate").value;
+            const partesFecha = fechaInput.split("/");
+
+            if (partesFecha.length !== 3) {
+                alert("Formato de fecha inválido. Ingrese la fecha en formato dd/mm/yyyy.");
+                return;
+            }
+
+            const dia = parseInt(partesFecha[0]);
+            const mes = parseInt(partesFecha[1]);
+            const anio = parseInt(partesFecha[2]);
+
+            if (isNaN(dia) || isNaN(mes) || isNaN(anio) || dia < 1 || mes < 1 || mes > 12) {
+                alert("Fecha inválida. Por favor, ingrese una fecha válida.");
+                return;
+            }
+
+            const diasPorMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            let diaAnterior = dia;
+            let mesAnterior = mes;
+            let anioAnterior = anio;
+
+            if (dia === 1) {
+                mesAnterior--; // Retrocede al mes anterior
+                if (mesAnterior === 0) {
+                    mesAnterior = 12; // Vuelve a diciembre
+                    anioAnterior--; // Retrocede al año anterior
+                }
+                diaAnterior = diasPorMes[mesAnterior - 1]; // Obtiene el último día del mes anterior
+            } else {
+                diaAnterior--; // Retrocede un día
+            }
+
+            alert("El día anterior a " + fechaInput + " es: " + diaAnterior + "/" + mesAnterior + "/" + anioAnterior);
+        }
+        //ejercicio 18
+        function calcularUltimoDiaDelMes() {
+            const dia = parseInt(document.getElementById("inputDay").value);
+            const mes = parseInt(document.getElementById("inputMonth").value);
+            const anio = parseInt(document.getElementById("inputYear").value);
+
+            // Se definen los días máximos por mes
+            const diasPorMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            // Si el mes es febrero y el año es bisiesto, se ajusta el máximo de días para febrero
+            if (mes === 2 && ((anio % 4 === 0 && anio % 100 !== 0) || (anio % 400 === 0))) {
+                diasPorMes[1] = 29;
+            }
+
+            // Se obtiene el último día del mes ingresado
+            const ultimoDia = diasPorMes[mes - 1];
+
+            // Se muestra el resultado en un alert
+            alert("El último día del mes es: " + ultimoDia);
+        }
+        //ejericicio 19
+        function ejercicio1() {
+            const edades = [20, 22, 25, 23, 21];
+            let i = 0;
+            while (i < edades.length) {
+                console.log(edades[i]);
+                i++;
+            }
+        }
+        //ejercicio 20
+        function ejercicio2() {
+            const edades = [20, 22, 25, 23, 21];
+            for (let i = 0; i < edades.length; i++) {
+                if (edades[i] % 2 === 0) {
+                    console.log(edades[i]);
+                }
+            }
+        }
+        //ejercicio 21
+        function ejercicio3() {
+            const edades = [20, 22, 25, 23, 21];
+            let min = edades[0];
+            for (let i = 1; i < edades.length; i++) {
+                if (edades[i] < min) {
+                    min = edades[i];
+                }
+            }
+            console.log("El número más bajo es: " + min);
+        }
+        //ejercicio 22
+        function ejercicio4() {
+            const edades = [20, 22, 25, 23, 21];
+            let max = edades[0];
+            for (let i = 1; i < edades.length; i++) {
+                if (edades[i] > max) {
+                    max = edades[i];
+                }
+            }
+            console.log("El número más grande es: " + max);
+        }
+        //ejercicio 23
+        function ejercicio5() {
+            const array = [3, 6, 67, 6, 23, 11, 100, 8, 93, 0, 17, 24, 7, 1, 33, 45, 28, 33, 23, 12, 99, 100];
+            const index = 1;
+            console.log("El valor en la posición " + index + " es: " + array[index - 1]);
+        }
+        //ejercicio 24
+        function ejercicio6() {
+            const array = [3, 6, 67, 6, 23, 11, 100, 8, 93, 0, 17, 24, 7, 1, 33, 45, 28, 33, 23, 12, 99, 100];
+            const repetidos = [];
+            for (let i = 0; i < array.length; i++) {
+                for (let j = i + 1; j < array.length; j++) {
+                    if (array[i] === array[j] && !repetidos.includes(array[i])) {
+                        repetidos.push(array[i]);
+                    }
+                }
+            }
+            console.log("Valores repetidos: " + repetidos.join(", "));
+        }
+        //ejercicio 25
+        function ejercicio7() {
+            const myColor = ["Red", "Green", "White", "Black"];
+            console.log(myColor.join(", "));
+        }
+        //ejercicio 26
+        function ejercicio8() {
+            const numero = 32443;
+            const invertido = numero.toString().split("").reverse().join("");
+            console.log("Número invertido: " + invertido);
+        }
+        //ejercicio 27
+        function ejercicio9() {
+            const x = 'webmaster';
+            const ordenado = x.split("").sort().join("");
+            console.log("Orden alfabético: " + ordenado);
+        }
+        //ejercicio 28
+        function ejercicio10() {
+            const x = "prince of persia";
+            const palabras = x.split(" ");
+            const resultado = palabras.map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1)).join(" ");
+            console.log("Mayúsculas en primera letra de cada palabra: " + resultado);
+        }
+        //ejercicio 29
+        function ejercicio11() {
+            const x = "Tutorial de desarrollo web";
+            const palabras = x.split(" ");
+            let palabraLarga = "";
+            for (let i = 0; i < palabras.length; i++) {
+                if (palabras[i].length > palabraLarga.length) {
+                    palabraLarga = palabras[i];
+                }
+            }
+            console.log("Palabra más larga: " + palabraLarga);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
